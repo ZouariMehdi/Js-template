@@ -354,7 +354,7 @@ main .main-text p {
 }
 .our-skills .container .skill {
   display: flex;
-  margin: 10px;
+  margin: 50px;
   gap: 10px;
 }
 .our-skills .container .skill span {
@@ -402,3 +402,52 @@ main .main-text p {
 }
 
 /* end our gallery section  */
+/* start testimonials */
+
+.testimonials{
+  background: linear-gradient(
+    to right,
+    rgb(235, 235, 235) 0%,
+      rgb(222, 222, 222) 50%,
+    var(--main-color) 50%,
+    var(--main-color) 100%
+    
+  );
+  padding: 100px 10px;
+  margin-top: 80px;
+}
+.testimonials h2{
+  text-align: center;
+  padding: 20px 50px;
+  background-color: white;
+  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--main-color);
+  border-radius: 10px;
+  font-weight: bold;
+  border: 4px solid var(--main-color);
+
+
+}
+.testimonials .bg{
+  display: flex;
+  margin-top: 100px;
+}
+.testimonials .bg .box{
+  background-color: rgb(249, 249, 249);
+  padding: 20px;
+  margin: 10px;
+  border: 4px solid var(--main-color);
+}
+.testimonials .bg .box h3{
+  text-align: center;
+  color: var(--main-color);
+}
+.testimonials .bg .box p{
+  color: #777;
+  line-height: 1.7;
+
+}
+/* end testimonials */
