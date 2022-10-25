@@ -1,6 +1,6 @@
-//first method
-console.log(" hello 'world' ");
-//second method 
-console.log(' hello "world" ');
-//third method
-console.log(" hello \"world\" ");
+// arithmetic operator 
+// addition +
+// subtraction -
+// multiplication *
+// divison / 
+console.log(12/4)

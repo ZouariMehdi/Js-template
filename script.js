@@ -10,14 +10,20 @@ let bgImagesArray = [
 ];
 let bgBtns = document.querySelectorAll("div > button");
 let count;
+var root = document.querySelector(":root");
+
+if(localStorage.getItem("main-color")){
+  root.style.setProperty("--main-color", localStorage.getItem("main-color"));
+
+}
 
 // change the color of the background
 let allColorsArray = document.querySelectorAll(".color");
 allColorsArray.forEach(function (colorEl) {
   colorEl.addEventListener("click", function (ev) {
     console.log(ev.currentTarget.dataset.color);
-    var root = document.querySelector(":root");
     root.style.setProperty("--main-color", ev.currentTarget.dataset.color);
+    localStorage.setItem("main-color", ev.currentTarget.dataset.color)
   });
 });
 // add active class to clicked color
@@ -58,7 +64,7 @@ function Active(arrayNodeList) {
 let gearEl = document.querySelector(".gear .fa-gear");
 let gearDiv = document.querySelector(".gear");
 gearDiv.addEventListener("click", function () {
-  gearEl.classList.add("fa-spin");
+  gearEl.classList.toggle("fa-spin");
 });
 gearDiv.addEventListener("click", function () {
   gearDiv.parentNode.classList.toggle("open");
