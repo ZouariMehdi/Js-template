@@ -12,9 +12,8 @@ let bgBtns = document.querySelectorAll("div > button");
 let count;
 var root = document.querySelector(":root");
 
-if(localStorage.getItem("main-color")){
+if (localStorage.getItem("main-color")) {
   root.style.setProperty("--main-color", localStorage.getItem("main-color"));
-
 }
 
 // change the color of the background
@@ -23,7 +22,7 @@ allColorsArray.forEach(function (colorEl) {
   colorEl.addEventListener("click", function (ev) {
     console.log(ev.currentTarget.dataset.color);
     root.style.setProperty("--main-color", ev.currentTarget.dataset.color);
-    localStorage.setItem("main-color", ev.currentTarget.dataset.color)
+    localStorage.setItem("main-color", ev.currentTarget.dataset.color);
   });
 });
 // add active class to clicked color
@@ -97,21 +96,31 @@ allImages.forEach(function (img) {
     let imgDiv = document.createElement("img");
     imgDiv.classList.add("img-pop");
     imgDiv.setAttribute("src", img.src);
-    document.body.appendChild(overlay)
+    document.body.appendChild(overlay);
     popUpWindow.appendChild(imgDiv);
     imageSection.appendChild(popUpWindow);
     //create close element
-    let closeEl=document.createElement("span")
-    closeEl.classList.add("close")
-    closeEl.innerText="X"
+    let closeEl = document.createElement("span");
+    closeEl.classList.add("close");
+    closeEl.innerText = "X";
 
-    popUpWindow.appendChild(closeEl)
-        // when you clicked the close element delete the popup box
-closeEl=document.querySelector(".close")
-closeEl.addEventListener("click",function(){
-  console.log(closeEl.parentElement.remove())
-  document.querySelector(".overlay").remove()
-})
+    popUpWindow.appendChild(closeEl);
+    // when you clicked the close element delete the popup box
+    closeEl = document.querySelector(".close");
+    closeEl.addEventListener("click", function () {
+      console.log(closeEl.parentElement.remove());
+      document.querySelector(".overlay").remove();
+    });
   });
 });
 
+// go to a specific position when you click a link
+let allHeaderLinks = document.querySelectorAll(" header ul > li");
+
+allHeaderLinks.forEach(function (link) {
+  link.addEventListener("click", function (ev) {
+    document
+      .querySelector(link.dataset.section)
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
